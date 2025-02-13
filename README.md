@@ -1,19 +1,30 @@
-# Sistema de Reconhecimento Facial 👤
+<p  align="center"><img  src="https://cdn.worldvectorlogo.com/logos/gopher.svg"  height="80"></p>
 
-Sistema básico para simulação de reconhecimento facial desenvolvido como atividade avaliativa da disciplina **Programação para Web II**.
+<h1  align="center"> FaceRecall</h1>
+<p  align="center">Bem vindo ao Face Recall!<br/>Sistema básico para simulação de reconhecimento facial. Desenvolvido como atividade avaliativa da disciplina de <b>Programação para Web II.</b></p>
 
-## 🛠 Tecnologias Utilizadas
 
-- **React** 
+## 📄 Estrutura dos Formulários 
+### Formulário 1: Cadastro de Faces 
+- **Objetivo:** Este formulário permite o cadastro de novas pessoas para o sistema de reconhecimento facial. Ele oferece a possibilidade de capturar a imagem diretamente pela câmera, realizando o mapeamento do rosto e armazenando as informações para futuras análises. 
+- **Desenvolvido:** Atualmente, a funcionalidade está implementada como um formulário estático que permite o upload de uma imagem ou foto da câmera e a inserção de informações básicas da pessoa.
 
-## ⚙️ Funcionalidades
+### Formulário 2: Reconhecimento por Upload 
+- **Objetivo:** Identificação de uma ou mais faces a partir de uma imagem enviada pelo usuário. O sistema processa a imagem e verifica quais das pessoas cadastradas ou selecionadas pelo usuário estão presentes nela. 
+- **Desenvolvido:** Implementado como um formulário estático que permite o upload da imagem e a seleção manual de quais pessoas devem ser analisadas (lista estática).
 
-- **Cadastro de Faces:** Cadastrar previamente uma face para reconhecimento.
-- **Reconhecimento por Upload:** Identificação de uma ou mais faces a partir de uma imagem enviada.
-- **Reconhecimento por Câmera ao Vivo:** A câmera é ativada e fecha automaticamente quando o rosto cadastrado é reconhecido.
+### Formulário 3: Reconhecimento por Câmera ao Vivo 
+- **Objetivo:** Ativar a câmera do dispositivo para capturar e analisar o rosto em tempo real. A câmera permanece ativa até que o rosto seja reconhecido, momento em que é fechada automaticamente, e o resultado é enviado ao sistema. 
+- **Desenvolvido:** A câmera é configurada para abrir por 3 segundos, salvando um frame a cada 0.5 segundos e salva esses frames para ação posterior.
 
 ## 🚀 Instalação e Execução
-
-### 1. Clonar o Repositório  
+Para instalar essa aplicação o <b>Node.js</b> e o <b>npm</b> devem estar corretamente instalados em sua máquina
+### 1. Instalar as dependências
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+npm  install
+```
+### 3. Rodar o sistema localmente
+```bash
+npm  run  dev
+``` 
+ Após esse comando o sistema irá iniciar em: http://localhos:5173
