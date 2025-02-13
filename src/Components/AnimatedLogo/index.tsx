@@ -25,7 +25,7 @@ const LogoImg = styled.img`
 
 const images = [logo, logoSmile, logoBlink, logoSmile, logo];
 
-const AnimatedLogo = () => {
+export default function AnimatedLogo() {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -36,6 +36,4 @@ const AnimatedLogo = () => {
   }, []);
 
   return <LogoImg src={images[currentImage]} alt="Robô" />;
-};
-
-export default AnimatedLogo;
+}
