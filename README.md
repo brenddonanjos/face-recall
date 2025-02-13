@@ -5,6 +5,8 @@
 
 
 ## 📄 Estrutura dos Formulários 
+Todas as telas de formulários podem ser acessadas através do menu lateral.
+
 ### Formulário 1: Cadastro de Faces 
 - **Objetivo:** Este formulário permite o cadastro de novas pessoas para o sistema de reconhecimento facial. Ele oferece a possibilidade de capturar a imagem diretamente pela câmera, realizando o mapeamento do rosto e armazenando as informações para futuras análises. 
 - **Desenvolvido:** Atualmente, a funcionalidade está implementada como um formulário estático que permite o upload de uma imagem ou foto da câmera e a inserção de informações básicas da pessoa.
