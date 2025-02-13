@@ -1,4 +1,4 @@
-<p  align="center"><img  src="https://cdn.worldvectorlogo.com/logos/gopher.svg"  height="80"></p>
+<p  align="center"><img  src="src/Images/logo.png"  height="50"></p>
 
 <h1  align="center"> FaceRecall</h1>
 <p  align="center">Bem vindo ao Face Recall!<br/>Sistema básico para simulação de reconhecimento facial. Desenvolvido como atividade avaliativa da disciplina de <b>Programação para Web II.</b></p>
