@@ -16,7 +16,6 @@ const LogoImage = styled.img<{ size: number }>`
   height: ${(props) => props.size}em;
 
   &:hover {
-    cursor: crosshair;
     filter: drop-shadow(0 0 2em #646cffaa);
   }
   &:hover {

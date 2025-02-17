@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import FaceRegister from "./Pages/FaceRegister";
 import FaceDetectUpload from "./Pages/FaceDetectUpload";
 import FaceDetectLive from "./Pages/FaceDetectLive";
+import { Routes, Route } from "react-router-dom";
 
 const AppContainer = styled.div`
   display: flex;
@@ -31,30 +32,19 @@ const Content = styled.div`
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
-  const [currentPage, setCurrentPage] = useState("home");
-
-  /* Switchcase para controlar a página (ISSO SERÁ SUBSTITUIDO APÓS A AULA DE ROTAS) */
-  const renderPage = (page: string) => {
-    switch (page) {
-      case "home":
-        return <Home />;
-      case "live":
-        return <FaceDetectLive />;
-      case "register":
-        return <FaceRegister />;
-      case "upload":
-        return <FaceDetectUpload />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
     <AppContainer>
-      <Sidebar active={sidebar} setCurrentPage={setCurrentPage} />
+      <Sidebar active={sidebar} />
       <PageContainer>
         <Header sidebar={sidebar} setSidebar={setSidebar} />
-        <Content>{renderPage(currentPage)}</Content>
+        <Content>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/live" element={<FaceDetectLive />} />
+            <Route path="/register" element={<FaceRegister />} />
+            <Route path="/upload" element={<FaceDetectUpload />} />
+          </Routes>
+        </Content>
       </PageContainer>
     </AppContainer>
   );

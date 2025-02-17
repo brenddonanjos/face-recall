@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { ScanFace, SmilePlus, Upload } from "lucide-react";
+import Menu from "../Menu";
 import Logo from "../Logo";
-import MenuItem from "./MenuItem";
+import { Link } from "react-router-dom";
 
 //Cria o componente com styled-components e define o tipo dos props (obrigatoriedade do typescript)
 const SidebarContainer = styled.div<{ width: number }>`
@@ -25,42 +25,30 @@ const LogoContainer = styled.div<{ $justifycontent?: string }>`
   height: 75px;
   padding-left: 24px;
   padding-right: 24px;
+
+  > a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  > a:visited {
+    color: inherit;
+  }
 `;
 
-export default function Sidebar(props: {
-  active: boolean;
-  setCurrentPage: (p: string) => void;
-}) {
+export default function Sidebar(props: { active: boolean }) {
   /* TODO: Substituir setCurrentPage pelas rotas
    */
   return (
     <SidebarContainer width={props.active ? 300 : 87}>
       <LogoContainer $justifycontent={props.active ? "flex-start" : "center"}>
-        <Logo size={3} typography={props.active} />
+        <Link to="/">
+          <Logo size={3} typography={props.active} />
+        </Link>
       </LogoContainer>
 
       <SidebarContent>
-        <MenuItem
-          $isActive={props.active}
-          onClick={() => props.setCurrentPage("register")}
-        >
-          <SmilePlus size={props.active ? 25 : 30} />
-          <span>Registrar Faces</span>
-        </MenuItem>
-        <MenuItem
-          $isActive={props.active}
-          onClick={() => props.setCurrentPage("upload")}
-        >
-          <Upload size={props.active ? 25 : 30} />
-          <span>Detectar Upload</span>
-        </MenuItem>
-        <MenuItem
-          $isActive={props.active}
-          onClick={() => props.setCurrentPage("live")}
-        >
-          <ScanFace size={props.active ? 25 : 30} />
-          <span>Detectar Faces</span>
-        </MenuItem>
+        <Menu $sidebar={props.active} />
       </SidebarContent>
     </SidebarContainer>
   );
